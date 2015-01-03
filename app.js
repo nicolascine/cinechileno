@@ -55,4 +55,10 @@ app.use(function(err, req, res, next) {
 });
 
 
+
+// JSON data > declarada de forma global
+var data = require('./peliculas.json');
+app.locals.appdata = data;
+
+
 module.exports = app;
