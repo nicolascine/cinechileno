@@ -4,9 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var routes = require('./routes/index');
-
 var app = express();
 
 // view engine setup
@@ -54,11 +52,14 @@ app.use(function(err, req, res, next) {
     });
 });
 
-
+//D3
+app.locals.fixtureData = require('./fixture_data.json');
+app.locals.barChartHelper = require('./bar_chart_helper');
 
 // JSON data > declarada de forma global
-var data = require('./peliculas.json');
-app.locals.appdata = data;
-
+app.locals.largo = require('./ficcion.json');
+app.locals.docu = require('./documentales.json');
+app.locals.corto = require('./cortometrajes.json');
+app.locals.animacion = require('./animacion.json');
 
 module.exports = app;
