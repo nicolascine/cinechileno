@@ -39,7 +39,8 @@
             <p>Un total de <%= largo.length + docu.length + corto.length + animacion.length %> Peliculas </p>
             <small><%=largo.length%> Largometrajes de Ficción, <%=docu.length%> documentales, <%=corto.length%> cortometrajes, <%=animacion.length%> películas de animación</small>
             <hr>
-<%-
+<!--
+  <%-
       barChartHelper.getBarChart({
         data: largo,
         width: 600,
@@ -49,18 +50,20 @@
         containerId: 'bar-chart-small'
       })
     %> 
-
+-->
           </div>
           <div class="row">
 
-<% for (var i in largo) {  %>
+        
+        <% for (var i in largo) {  %>
 
             <div class="col-xs-6 col-lg-4">
               <h3><a href="/pelicula/<%= largo[i].id%>" title="<%= largo[i].name %>"><%= largo[i].name %></a></h3>
               <p><%= largo[i].anio %> - <%= largo[i].formato %> </p>
               <p><a class="btn btn-default" href="#" role="button">Ver detalle &raquo;</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
-<% } %>
+        
+        <% } %>
 
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
